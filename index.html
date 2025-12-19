@@ -33,6 +33,7 @@
             border: 1px solid rgba(255, 255, 255, 0.18);
             max-width: 800px;
             width: 90%;
+            margin: 20px;
         }
 
         .video-element {
@@ -42,18 +43,11 @@
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
-
-        .video-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="video-title">Cloud Video</h1>
-        <video class="video-element" controls autoplay muted>
+        <video class="video-element" autoplay muted loop>
             <source src="cloud.mp4" type="video/mp4">
             Your browser does not support the video tag. Please update your browser to view this video.
         </video>
