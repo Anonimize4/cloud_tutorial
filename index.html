@@ -14,34 +14,19 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            max-width: 800px;
-            width: 90%;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
         .video-element {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 700px;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
     </style>
 </head>
