@@ -21,9 +21,30 @@
             justify-content: center;
             align-items: center;
             color: white;
-        }
-
-        .container {
+            }
+    
+            header {
+                text-align: center;
+                padding: 20px 0;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+            }
+    
+            .glowing-marquee {
+                font-size: 36px;
+                font-weight: bold;
+                color: #fff;
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #667eea;
+                animation: glow 2s ease-in-out infinite alternate;
+            }
+    
+            @keyframes glow {
+                from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #667eea; }
+                to { text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #667eea; }
+            }
+    
+            .container {
             text-align: center;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -40,14 +61,121 @@
             height: auto;
             border-radius: 15px;
         }
+
+        .intro-section, .memes-section, .game-section {
+            margin-top: 40px;
+            text-align: left;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .intro-section h2, .memes-section h2, .game-section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .intro-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .meme-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .meme {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .meme-text {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #send-cloud {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+
+        #send-cloud:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        #counter {
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <header>
+            <div id="color-switching-marquee" class="glowing-marquee">INNOVATION ☁️ KTS TEAM</div>
+        </header>
+        <div class="intro-section">
+            <h2>What is Cloud Computing?</h2>
+            <p>Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the Internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale.</p>
+            <p>It allows you to access and store data and applications on remote servers instead of your local computer, providing benefits like scalability, cost-efficiency, and accessibility from anywhere.</p>
+        </div>
         <video class="video-element" controls muted loop>
             <source src="cloud.mp4" type="video/mp4">
             Your browser does not support the video tag. Please update your browser to view this video.
         </video>
+        <div class="memes-section">
+            <h2>Fun Cloud Memes</h2>
+            <div class="meme-container">
+                <img src="https://i.imgur.com/4Z4Z4Z4.jpg" alt="Cloud Meme 1" class="meme animated">
+                <img src="https://i.imgur.com/5Y5Y5Y5.jpg" alt="Cloud Meme 2" class="meme animated">
+            </div>
+        </div>
+        <div class="game-section">
+            <h2>Cloud Counter Demo</h2>
+            <div class="meme-text">"There is no cloud. It's just someone else's computer."</div>
+            <button id="send-cloud" onclick="incrementCounter()">Send to the Cloud ☁️</button>
+            <p>Cloud Counter: <span id="counter">0</span></p>
+            <p>This counter is stored locally, but in a real cloud, it would be shared across all users!</p>
+        </div>
     </div>
+    <script>
+        const colors = ['#fff', '#667eea', '#764ba2', '#f093fb', '#f5576c'];
+        let colorIndex = 0;
+        const marquee = document.getElementById('color-switching-marquee');
+
+        setInterval(() => {
+            colorIndex = (colorIndex + 1) % colors.length;
+            marquee.style.color = colors[colorIndex];
+        }, 2000); // Switch color every 2 seconds
+
+        function incrementCounter() {
+            let count = localStorage.getItem('cloudCounter') || 0;
+            count = parseInt(count) + 1;
+            localStorage.setItem('cloudCounter', count);
+            document.getElementById('counter').textContent = count;
+        }
+
+        // Load initial counter value
+        document.getElementById('counter').textContent = localStorage.getItem('cloudCounter') || 0;
+    </script>
 </body>
 </html>
