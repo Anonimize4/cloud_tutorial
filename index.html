@@ -1,10 +1,11 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+    <title>Cloud Video</title>
     <style>
         * {
             margin: 0;
@@ -27,437 +28,35 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 60px 40px;
+            padding: 40px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             border: 1px solid rgba(255, 255, 255, 0.18);
-            max-width: 600px;
+            max-width: 800px;
             width: 90%;
-        }
-
-        .logo {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            opacity: 0.8;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.8s both;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            box-shadow: 0 4px 15px 0 rgba(255, 107, 107, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px 0 rgba(31, 38, 135, 0.4);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 6px 20px 0 rgba(255, 107, 107, 0.6);
-        }
-
-
-        .video-section {
-            margin-top: 50px;
-            animation: fadeInUp 1s ease-out 1s both;
-        }
-
-        .video-container {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            margin-bottom: 20px;
-        }
-
-        .video-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-
-        .video-description {
-            font-size: 1rem;
-            margin-bottom: 20px;
-            opacity: 0.8;
-            line-height: 1.5;
         }
 
         .video-element {
             width: 100%;
-            max-width: 500px;
+            max-width: 700px;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-
-        .video-placeholder {
-            width: 100%;
-            max-width: 500px;
-            height: 280px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: white;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .video-placeholder:hover {
-            transform: translateY(-2px);
-        }
-
-        .play-icon {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-
-        .features {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            animation: fadeInUp 1s ease-out 1.2s both;
-        }
-
-        .feature {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .feature h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 200px;
-            }
-        }
-
-        .floating-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .particle:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .particle:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            left: 20%;
-            animation-delay: 2s;
-        }
-
-        .particle:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            left: 70%;
-            animation-delay: 4s;
-        }
-
-        .particle:nth-child(4) {
-            width: 100px;
-            height: 100px;
-            left: 80%;
-            animation-delay: 1s;
-        }
-
-        .particle:nth-child(5) {
-            width: 90px;
-            height: 90px;
-            left: 50%;
-            animation-delay: 3s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-            }
+        .video-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
-    <div class="floating-particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-
     <div class="container">
-        <div class="logo">🌟</div>
-        <h1>Welcome!</h1>
-        <p class="subtitle">Hello and welcome to our platform</p>
-        <p class="description">
-            We're excited to have you here! This is a modern, responsive welcome page 
-            designed to provide you with an exceptional user experience. 
-            Explore our features and discover what we have to offer.
-        </p>
-        
-
-        <div class="buttons">
-            <button class="btn btn-primary" onclick="handleGetStarted()">Get Started</button>
-            <button class="btn btn-secondary" onclick="handleLearnMore()">Learn More</button>
-        </div>
-
-        <div class="video-section">
-            <div class="video-container">
-                <h3 class="video-title">Watch Our Introduction Video</h3>
-                <p class="video-description">
-                    Get to know our platform better with this quick introduction video. 
-                    Learn about our key features and how we can help you succeed.
-                </p>
-                <div class="video-placeholder" onclick="playVideo()">
-                    <div class="play-icon">▶️</div>
-                    <div>Click to Play Video</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">🚀</div>
-                <h3>Fast & Efficient</h3>
-                <p>Lightning-fast performance with optimized code and modern technologies</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>Secure</h3>
-                <p>Your data is protected with enterprise-grade security measures</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📱</div>
-                <h3>Responsive</h3>
-                <p>Works perfectly on all devices, from desktop to mobile</p>
-            </div>
-        </div>
+        <h1 class="video-title">Cloud Video</h1>
+        <video class="video-element" controls autoplay muted>
+            <source src="cloud.mp4" type="video/mp4">
+            Your browser does not support the video tag. Please update your browser to view this video.
+        </video>
     </div>
-
-    <script>
-
-        function handleGetStarted() {
-            alert('Welcome! You clicked Get Started. This would typically redirect to the main application or registration page.');
-        }
-
-        function handleLearnMore() {
-            alert('Learn More clicked! This would typically open a detailed information page or show more content.');
-        }
-
-        function playVideo() {
-            const videoPlaceholder = document.querySelector('.video-placeholder');
-            const videoTitle = document.querySelector('.video-title');
-            const videoDescription = document.querySelector('.video-description');
-            
-            // Replace placeholder with actual video element
-            videoPlaceholder.innerHTML = `
-                <video class="video-element" controls autoplay>
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.webm" type="video/webm">
-                    Your browser does not support the video tag. Please update your browser to view this video.
-                </video>
-            `;
-            
-            // Add fade-in animation
-            const video = videoPlaceholder.querySelector('.video-element');
-            video.style.opacity = '0';
-            video.style.transform = 'scale(0.8)';
-            video.style.transition = 'all 0.5s ease';
-            
-            setTimeout(() => {
-                video.style.opacity = '1';
-                video.style.transform = 'scale(1)';
-            }, 100);
-            
-            // Update title and description
-            videoTitle.textContent = 'Welcome Video Playing';
-            videoDescription.textContent = 'Enjoy watching our introduction video! This showcases the key features and benefits of our platform.';
-        }
-
-        // Add some interactive effects
-        document.addEventListener('mousemove', function(e) {
-            const particles = document.querySelectorAll('.particle');
-            particles.forEach((particle, index) => {
-                const speed = (index + 1) * 0.02;
-                const x = e.clientX * speed;
-                const y = e.clientY * speed;
-                particle.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        });
-
-        // Add click effect to buttons
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                let ripple = document.createElement('span');
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.animation = 'ripple 0.6s linear';
-                ripple.style.left = (e.offsetX - 10) + 'px';
-                ripple.style.top = (e.offsetY - 10) + 'px';
-                ripple.style.width = ripple.style.height = '20px';
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-
-        // Add ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
 </body>
 </html>
